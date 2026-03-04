@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1001,
+    "title": "Login page not loading",
+    "description": "Users are unable to load the login page after clicking the login button.",
+    "customer": "Rahim Uddin",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "01-03-26"
+  },
+  {
+    "id": 1002,
+    "title": "Payment gateway error",
+    "description": "Payment fails during checkout process.",
+    "customer": "Karim Ahmed",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "01-03-26"
+  },
+  {
+    "id": 1003,
+    "title": "Profile update issue",
+    "description": "Users cannot update their profile picture.",
+    "customer": "Nusrat Jahan",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "02-03-26"
+  },
+  {
+    "id": 1004,
+    "title": "Dashboard statistics incorrect",
+    "description": "Sales data does not match actual transactions.",
+    "customer": "Tanvir Hasan",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "02-03-26"
+  },
+  {
+    "id": 1005,
+    "title": "Password reset email not sent",
+    "description": "Customers are not receiving password reset emails.",
+    "customer": "Shamim Reza",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "02-03-26"
+  },
+  {
+    "id": 1006,
+    "title": "Mobile view layout broken",
+    "description": "UI elements overlap on small screen devices.",
+    "customer": "Farhana Islam",
+    "priority": "Medium",
+    "status": "In Progress",
+    "createdAt": "03-03-26"
+  },
+  {
+    "id": 1007,
+    "title": "Search function slow",
+    "description": "Product search takes more than 5 seconds to load results.",
+    "customer": "Sabbir Hossain",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "03-03-26"
+  },
+  {
+    "id": 1008,
+    "title": "Order history missing",
+    "description": "Previous orders are not visible in user account.",
+    "customer": "Mim Akter",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "03-03-26"
+  },
+  {
+    "id": 1009,
+    "title": "Coupon code invalid error",
+    "description": "Valid coupon codes show invalid error message.",
+    "customer": "Arif Chowdhury",
+    "priority": "Medium",
+    "status": "In Progress",
+    "createdAt": "03-03-26"
+  },
+  {
+    "id": 1010,
+    "title": "Logout button not working",
+    "description": "Users remain logged in after clicking logout.",
+    "customer": "Tania Rahman",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "04-03-26"
+  },
+  {
+    "id": 1011,
+    "title": "Notification badge not updating",
+    "description": "Unread notification count does not update in real-time.",
+    "customer": "Imran Ali",
+    "priority": "Low",
+    "status": "In Progress",
+    "createdAt": "04-03-26"
+  },
+  {
+    "id": 1012,
+    "title": "File upload failed",
+    "description": "Users receive an error while uploading documents.",
+    "customer": "Jannat Sultana",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "04-03-26"
+  }
+]
