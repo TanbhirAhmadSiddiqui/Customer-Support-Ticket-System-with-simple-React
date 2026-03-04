@@ -1,9 +1,12 @@
 import React from "react";
+import TaskStatus from "../TaskStatus/TaskStatus";
 
-const StatusResolvedTask = () => {
+const StatusResolvedTask = ({ status }) => {
   return (
     <div>
-      <h1>StatusResolvedTask</h1>
+      {status.map((taskStatus) => (
+        <TaskStatus key={taskStatus.id} taskStatus={taskStatus}></TaskStatus>
+      ))}
     </div>
   );
 };
