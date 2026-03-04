@@ -1,9 +1,10 @@
 import "./App.css";
+import InProgressResolved from "./Components/InProgress_Resolve/InProgressResolved";
 
 function App() {
   return (
     <>
-      <h1 className="text-center">Vite + React</h1>
+      <InProgressResolved></InProgressResolved>
     </>
   );
 }
