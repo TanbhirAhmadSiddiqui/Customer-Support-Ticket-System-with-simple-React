@@ -2,8 +2,20 @@ import React, { useState } from "react";
 import CustomerTickets from "../CustomerTickets/CustomerTickets";
 import StatusResolvedTask from "../StatusResolvedTask/StatusResolvedTask";
 
-const CustomerOverview = ({ promiseTickets, inProgress, setInProgress }) => {
+const CustomerOverview = ({
+  promiseTickets,
+  inProgress,
+  setInProgress,
+  resolvedProgress,
+  setResolvedProgress,
+}) => {
   const [status, setStatus] = useState([]);
+  const removeStatus = (removed) => {
+    const updateStatus = status.filter(
+      (singleStatus) => singleStatus.id !== removed.id,
+    );
+    setStatus(updateStatus);
+  };
   return (
     <div className="flex flex-col lg:flex-row max-w-300 mx-auto gap-5 py-5">
       <CustomerTickets
@@ -13,7 +25,14 @@ const CustomerOverview = ({ promiseTickets, inProgress, setInProgress }) => {
         status={status}
         setStatus={setStatus}
       ></CustomerTickets>
-      <StatusResolvedTask status={status}></StatusResolvedTask>
+      <StatusResolvedTask
+        removeStatus={removeStatus}
+        resolvedProgress={resolvedProgress}
+        setResolvedProgress={setResolvedProgress}
+        inProgress={inProgress}
+        setInProgress={setInProgress}
+        status={status}
+      ></StatusResolvedTask>
     </div>
   );
 };

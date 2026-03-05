@@ -15,11 +15,17 @@ loadTicketsData();
 function App() {
   // create state for In-Progress
   const [inProgress, setInProgress] = useState(0);
+  const [resolvedProgress, setResolvedProgress] = useState(0);
   return (
     <>
-      <InProgressResolved inProgress={inProgress}></InProgressResolved>
+      <InProgressResolved
+        inProgress={inProgress}
+        resolvedProgress={resolvedProgress}
+      ></InProgressResolved>
       <Suspense fallback={"Loading..."}>
         <CustomerOverview
+          resolvedProgress={resolvedProgress}
+          setResolvedProgress={setResolvedProgress}
           inProgress={inProgress}
           setInProgress={setInProgress}
           promiseTickets={promiseTickets}

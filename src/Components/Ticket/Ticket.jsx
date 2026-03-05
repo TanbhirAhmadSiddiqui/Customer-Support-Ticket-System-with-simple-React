@@ -17,7 +17,7 @@ const Ticket = ({ ticket, inProgress, setInProgress, status, setStatus }) => {
       type="button" // Always specify type="button" to prevent form submissions
       disabled={isSelected} // This natively stops the onClick event
       onClick={handleTicket}
-      className={`text-left w-full rounded-xl border p-4 shadow-sm transition-all duration-200
+      className={`w-full text-left block rounded-xl border p-4 shadow-sm transition-all duration-200
         ${
           isSelected
             ? "opacity-50 cursor-not-allowed bg-gray-100 dark:bg-neutral-800"
