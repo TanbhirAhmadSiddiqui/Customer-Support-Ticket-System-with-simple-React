@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import Ticket from "../Ticket/Ticket";
 
 const CustomerTickets = ({
@@ -8,13 +8,14 @@ const CustomerTickets = ({
   status,
   setStatus,
 }) => {
-  const tickets = use(promiseTickets);
+  // const tickets = use(promiseTickets);
+  // const [upTickets, setupTickets] = useState(tickets);
   return (
     <div>
       {/* Grid Container */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Card */}
-        {tickets.map((ticket) => (
+        {promiseTickets.map((ticket) => (
           <Ticket
             key={ticket.id}
             ticket={ticket}

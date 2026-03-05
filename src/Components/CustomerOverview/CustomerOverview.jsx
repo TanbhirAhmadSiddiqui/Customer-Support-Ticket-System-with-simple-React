@@ -8,6 +8,7 @@ const CustomerOverview = ({
   setInProgress,
   resolvedProgress,
   setResolvedProgress,
+  deleteTicketToCustomer,
 }) => {
   const [status, setStatus] = useState([]);
   const removeStatus = (removed) => {
@@ -26,6 +27,7 @@ const CustomerOverview = ({
         setStatus={setStatus}
       ></CustomerTickets>
       <StatusResolvedTask
+        deleteTicketToCustomer={deleteTicketToCustomer}
         removeStatus={removeStatus}
         resolvedProgress={resolvedProgress}
         setResolvedProgress={setResolvedProgress}

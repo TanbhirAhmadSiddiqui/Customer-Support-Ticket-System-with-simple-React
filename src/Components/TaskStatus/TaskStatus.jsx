@@ -9,6 +9,7 @@ const TaskStatus = ({
   resolvedProgress,
   setResolvedProgress,
   removeStatus,
+  deleteTicketToCustomer,
 }) => {
   const handleTaskResolved = (task) => {
     const newResolved = [...resolved, task];
@@ -18,6 +19,7 @@ const TaskStatus = ({
     const newResolvedProgress = resolvedProgress + 1;
     setResolvedProgress(newResolvedProgress);
     removeStatus(task);
+    deleteTicketToCustomer(task);
   };
   return (
     <div className="border p-1 rounded m-1">

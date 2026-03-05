@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, use, useState } from "react";
 import "./App.css";
 import CustomerOverview from "./Components/CustomerOverview/CustomerOverview";
 import InProgressResolved from "./Components/InProgress_Resolve/InProgressResolved";
@@ -10,9 +10,18 @@ const loadTicketsData = async () => {
   return res.json();
 };
 
-const promiseTickets = loadTicketsData();
+const allTickets = loadTicketsData();
 loadTicketsData();
 function App() {
+  // display Tickets in customer tickets an store a state name promiseTickets
+  const tickets = use(allTickets);
+  const [promiseTickets, setpromiseTickets] = useState(tickets);
+  const deleteTicketToCustomer = (getTicket) => {
+    const newPromiseTickets = promiseTickets.filter(
+      (promise) => promise.id !== getTicket.id,
+    );
+    setpromiseTickets(newPromiseTickets);
+  };
   // create state for In-Progress
   const [inProgress, setInProgress] = useState(0);
   const [resolvedProgress, setResolvedProgress] = useState(0);
@@ -24,6 +33,7 @@ function App() {
       ></InProgressResolved>
       <Suspense fallback={"Loading..."}>
         <CustomerOverview
+          deleteTicketToCustomer={deleteTicketToCustomer}
           resolvedProgress={resolvedProgress}
           setResolvedProgress={setResolvedProgress}
           inProgress={inProgress}

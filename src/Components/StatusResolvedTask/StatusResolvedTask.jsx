@@ -9,6 +9,7 @@ const StatusResolvedTask = ({
   resolvedProgress,
   setResolvedProgress,
   removeStatus,
+  deleteTicketToCustomer,
 }) => {
   const [resolved, setResolved] = useState([]);
   return (
@@ -16,6 +17,7 @@ const StatusResolvedTask = ({
       <h1>Task Status</h1>
       {status.map((taskStatus) => (
         <TaskStatus
+          deleteTicketToCustomer={deleteTicketToCustomer}
           removeStatus={removeStatus}
           resolvedProgress={resolvedProgress}
           setResolvedProgress={setResolvedProgress}
