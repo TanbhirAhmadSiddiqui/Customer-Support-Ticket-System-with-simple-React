@@ -1,16 +1,98 @@
-# React + Vite
+1️ What is JSX, and why is it used?
+JSX (JavaScript XML) is a syntax that allows you to write HTML-like code inside JavaScript. It is mainly used in React to describe the UI.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Why it is used:
 
-Currently, two official plugins are available:
+- Makes UI code easier to write
+- Looks similar to HTML, so it is more readable
+- Allows using JavaScript logic inside UI
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Example:
 
-## React Compiler
+```jsx
+const element = <h1>Hello World</h1>;
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+2️ What is the difference between State and Props?
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Props=>
+Data passed from parent component
+Read-only (cannot be modified by child)
+Used to pass data between components
+
+State=>
+Data managed inside the component
+Can be updated
+Used to manage and update UI
+
+---
+
+3️ What is the useState hook, and how does it work?
+
+useState is a React Hook that allows functional components to have state.
+
+Example:
+
+```jsx
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
+}
+```
+
+How it works:
+
+count → current state value
+setCount → function to update the state
+useState(0) → initial state value
+
+---
+
+4️ How can you share state between components in React?
+
+State can be shared using Lifting State Up.
+This means moving the shared state to a common parent component and passing it to child components using props.
+
+Example:
+
+```jsx
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <Child1 count={count} />
+      <Child2 setCount={setCount} />
+    </>
+  );
+}
+```
+
+---
+
+5️ How is event handling done in React?
+
+Event handling in React is done using camelCase event names and passing a function as the event handler.
+
+Example:
+
+```jsx
+function Button() {
+  function handleClick() {
+    alert("Button clicked");
+  }
+
+  return <button onClick={handleClick}>Click</button>;
+}
+```
+
+Common events:
+onClick
+onChange
+onSubmit
+onMouseOver
